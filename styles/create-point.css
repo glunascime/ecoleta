@@ -120,7 +120,7 @@ form button:hover {
 }
 
 .items-grid li {
-    background-color: #f5f5f5;
+    background-color: #E1FAEC;
     list-style: none;
     border: 2px solid #f5f5f5;
     border-radius: 8px;
@@ -142,12 +142,12 @@ form button:hover {
     color: var(--title-color);
 }
 
-.items-grid li .selected {
-    background: #e1faec;
-    border: 2px solid #34cb79;
+.items-grid li.selected {
+    background: linear-gradient(180deg,  #E1FAEC 0%, #e7e4e7 100%);
+    border: 3px solid #34cb79;
 }
 
-.items-grid li img,
+.items-grid li img, 
 .items-grid li span {
     pointer-events: none;
 }
