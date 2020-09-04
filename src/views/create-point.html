@@ -7,15 +7,15 @@
         {% endblock title %}
 
         {% block styles %}
-            <link rel="stylesheet" href="/public/styles/create-point.css">
-            <link rel="stylesheet" href="/public/styles/modal.css">
+            <link rel="stylesheet" href="/styles/create-point.css">
+            <link rel="stylesheet" href="/styles/modal.css">
         {% endblock styles %}
         
         {% block content %}
-            {% include "partials/page-header.html"}
+            {% include "partials/page-header.html" %}
 
-            <form action="/savepoint" method="POST">
-                <h1>Cadastro do Ponto de coleta</h1>
+            <form action="/save-point" method="POST">
+                <h1>Cadastro do Ponto de Coleta</h1>
 
                 <fieldset>
                     <legend>
@@ -75,32 +75,32 @@
                     </legend>
 
                     <div class="items-grid">
-                        <li data-id="lâmpadas">
+                        <li data-id="Lâmpadas">
                             <img src="/assets/lampadas.svg" alt="lâmpadas">
                             <span>Lâmpadas</span>
                         </li>
 
-                        <li data-id="pilhas e baterias">
+                        <li data-id="Pilhas e Baterias">
                             <img src="/assets/baterias.svg" alt="pilhas e baterias">
                             <span>Pilhas e Baterias</span>
                         </li>
 
-                        <li data-id="papéis e papelão">
+                        <li data-id="Papéis e Papelão">
                             <img src="/assets/papeis-papelao.svg" alt="papéis e papelão">
                             <span>Papéis e Papelão</span>
                         </li>
 
-                        <li data-id="resíduos eletrônicos">
+                        <li data-id="Resíduos Eletrônicos">
                             <img src="/assets/eletronicos.svg" alt="resíduos eletrônicos">
                             <span>Resíduos Eletrônicos</span>
                         </li>
 
-                        <li data-id="resíduos orgânicos">
+                        <li data-id="Resíduos Orgânicos">
                             <img src="/assets/organicos.svg" alt="resíduos orgânicos">
                             <span>Resíduos Orgânicos</span>
                         </li>
 
-                        <li data-id="óleo de cozinha">
+                        <li data-id="Óleo de Cozinha">
                             <img src="/assets/oleo.svg" alt="óleo de cozinha">
                             <span>Óleo de Cozinha</span>
                         </li>

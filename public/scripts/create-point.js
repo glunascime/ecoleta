@@ -62,6 +62,7 @@ document
         console.log(itemLi);
 
         const itemId = itemLi.dataset.id;
+        console.log('ITEM ID: ', itemId);
 
         const alreadySelected = selectedItems.findIndex (item => {
             const itemFound= item == itemId;
@@ -78,7 +79,7 @@ document
         } else {
             selectedItems.push(itemId); 
         } 
-
+            console.log('selectedItems: ', selectedItems);
         collectedItems.value = selectedItems;
 
     };

@@ -1,60 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt_br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "layout.html" %}
 
-        <title>Ecoleta</title>
+{% set pageId = "page-search-results" %}
 
-        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    {% block title %}
+        <title>Resultado da Pesquisa</title>
+    {% endblock title %}
 
-        <link rel="stylesheet"  href="/styles/main.css">
+    {% block styles %}
         <link rel="stylesheet" href="/styles/search-results.css">
+    {% endblock styles %}
 
-        <link rel="stylesheet" href="/styles/responsive.css">
-    </head>
-
-    <body>
-        <div id="page-search-results">
-            <header>
-                <img src="/assets/logo.svg" alt="logomarca">
-                <a href="index.html">
-                    <span></span>
-                    Voltar para home
-                </a>
-            </header>
-
+        {% block content %}
+            {% include "partials/page-header.html" %}
             <main>
+
+                {% if total > 0 %}
                 <h4>
-                    <strong>2 pontos</strong> encontrados
+                    <strong>{{total}} pontos</strong> encontrados
                 </h4>
 
                 <div class="cards">
+                    {% for place in places %}
                     <div class="card">
-                        <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2001&q=80" alt="colectoria">
-                        <h1>Colectoria</h1>
-                        <h3>Resíduos Eletrônicos, Lâmpadas</h3>
+                        <img src="{{ place.image }}" alt="{{ place.name }}">
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items }}</h3>
                         <p>
-                            Rio do Sul, Santa Catarina <br>
-                            Guilherme Gemballa, Jardim América <br>
-                            Número 260
+                            {{ place. city }}, {{ place.state }} 
+                            <br>
+                            {{ place.address }} 
+                            <br>
+                            {{ place.address2 }}
                         </p>
                     </div>
 
-                    <div class="card">
-                        <img src="https://images.unsplash.com/photo-1567393528677-d6adae7d4a0a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="papersider">
-                        <h1>Papersider</h1>
-                        <h3>Papéis e Papelão</h3>
-                        <p>
-                            Rio do Sul, Santa Catarina <br>
-                            Guilherme Gemballa, Jardim América <br>
-                            Número 300
-                        </p>
-                    </div>
+                    {% endfor %}
+                    
                 </div>
 
-            </main>
-        </div>
+            {% else %}
+                <h4><strong>Nenhum</strong> local encontrado</h4>
+            {% endif %}
 
-    </body>
-    </html>
+            </main>
+            
+            {% endblock content %}
