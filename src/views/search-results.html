@@ -24,7 +24,7 @@
                     <div class="card">
                         <img src="{{ place.image }}" alt="{{ place.name }}">
                         <h1>{{ place.name }}</h1>
-                        <h3>{{ place.items }}</h3>
+                        <h3 class="item">{{ place.items }}</h3>
                         <p>
                             {{ place. city }}, {{ place.state }} 
                             <br>
@@ -32,7 +32,7 @@
                             <br>
                             {{ place.address2 }}
                         </p>
-                    </div>
+                    </div>        
 
                     {% endfor %}
                     
@@ -43,5 +43,16 @@
             {% endif %}
 
             </main>
+
+            <script>
+                const itemsElement = document.getElementsByClassName("item");
+                console.log(itemsElement);
+
+                Array.from(itemsElement).forEach(element => {
+                    element.innerText = element.innerText.replaceAll("," , ", ")
+                });
+            </script>
             
             {% endblock content %}
+
+            
