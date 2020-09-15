@@ -29,10 +29,17 @@
 #page-home header a span {
     margin-right: 16px;
     display: flex;
-    background-image: url(../assets/log-in.svg);
     width: 20px;
     height: 20px;
 }
+
+#page-home header a span.point {
+    background-image: url(../assets/log-in.svg);
+}
+
+#page-home header a span.login {
+    background-image: url(../assets/login.svg);
+} 
 
 #page-home main {
     max-width: 560px;

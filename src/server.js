@@ -19,7 +19,12 @@ server.get("/", (req,res) => {
 server.get("/create-point", (req, res) => {
     console.log(req.query);
     return res.render("create-point.html")
-})
+});
+
+server.get("/login", (req, res) => {
+    console.log("login");
+    return res.render("login.html")
+});
 
 server.post("/save-point", (req, res) => {
     console.log(req.body);
