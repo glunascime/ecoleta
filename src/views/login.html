@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% set pageId = "login" %}
+
+        {% block title %}
+            <title>Login</title>
+        {% endblock title %}
+
+        {% block styles %}
+            <link rel="stylesheet" href="/styles/login.css">
+            <link rel="stylesheet" href="/styles/modal.css">
+        {% endblock styles %}
+
+        {% block content %}
+            {% include "partials/page-header.html" %}
+
+                <div id="sign-in" >
+                    <div class="content">
+                        <div class="header">
+                            <h1>Login</h1>
+                            <h3>Pronto para continuar reciclando?</h3>
+                            <a href="#">Fechar</a>
+                        </div>
+
+                        <form action="/sign-in" method="POST">
+                            <label for="sign-in">Email</label>
+                            <div class="field">
+                                <input 
+                                    type="text"
+                                    name="email">
+                            </div>
+
+                            <div class="field">
+                                <label for="password">Senha</label>
+                                <input 
+                                    type="password"
+                                    name="password">
+                            </div>
+
+                            <button type="submit">Entrar</button>
+                        </form>
+                    </div>
+                </div>
+
+                        

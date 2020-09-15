@@ -23,7 +23,7 @@ server.get("/create-point", (req, res) => {
 
 server.get("/login", (req, res) => {
     console.log("login");
-    return res.render("login.html")
+    return res.render("/login.html")
 });
 
 server.post("/save-point", (req, res) => {
